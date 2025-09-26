@@ -147,7 +147,7 @@ def clear():
     return jsonify({'status': 'cleared'})
 
 if __name__ == '__main__':
-    print("🚀 Starting MNIST Digit Recognition Web App...")
+    print("Starting MNIST Digit Recognition Web App...")
     load_model()
     print("Web app ready! Open http://localhost:5001 in your browser")
     app.run(debug=True, host='0.0.0.0', port=5001)

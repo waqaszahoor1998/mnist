@@ -21,32 +21,32 @@ def run_command(command, description):
     print(f"\n{description}...")
     try:
         result = subprocess.run(command, shell=True, check=True, capture_output=True, text=True)
-        print(f"✅ {description} completed successfully")
+        print(f" {description} completed successfully")
         return True
     except subprocess.CalledProcessError as e:
-        print(f"❌ Error during {description}:")
+        print(f" Error during {description}:")
         print(f"Command: {command}")
         print(f"Error: {e.stderr}")
         return False
 
 def main():
     """Main setup function."""
-    print("🚀 MNIST Digit Recognition Setup")
+    print("MNIST Digit Recognition Setup")
     print("=" * 50)
     
     # Check if Python 3 is available
     if sys.version_info < (3, 8):
-        print("❌ Python 3.8 or higher is required")
+        print("Python 3.8 or higher is required")
         sys.exit(1)
     
-    print(f"✅ Python {sys.version.split()[0]} detected")
+    print(f"Python {sys.version.split()[0]} detected")
     
     # Create virtual environment
     if not os.path.exists("venv"):
         if not run_command("python3 -m venv venv", "Creating virtual environment"):
             sys.exit(1)
     else:
-        print("✅ Virtual environment already exists")
+        print("Virtual environment already exists")
     
     # Activate virtual environment and install dependencies
     if os.name == 'nt':  # Windows
@@ -65,10 +65,10 @@ def main():
     print("This may take a few minutes...")
     
     if not run_command(f"{activate_cmd} && python improved_model.py", "Training improved model"):
-        print("⚠️  Model training failed, but you can still use the basic model")
+        print(" Model training failed, but you can still use the basic model")
     
-    print("\n🎉 Setup completed successfully!")
-    print("\n📖 Next steps:")
+    print("\n Setup completed successfully!")
+    print("\n Next steps:")
     print("1. Activate virtual environment:")
     if os.name == 'nt':
         print("   venv\\Scripts\\activate")
@@ -81,7 +81,7 @@ def main():
     print("   Demo:        python demo.py")
     
     print("\n3. Open your browser to http://localhost:5001 for the web app")
-    print("\n📚 See README.md for detailed documentation")
+    print("\n See README.md for detailed documentation")
 
 if __name__ == "__main__":
     main()

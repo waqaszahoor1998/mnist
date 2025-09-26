@@ -1,10 +1,10 @@
 # MNIST Digit Recognition - Project Summary
 
-## 🎯 Project Overview
+## Project Overview
 
 This is a complete machine learning system for recognizing handwritten digits (0-9) using the MNIST dataset. The project features both web and desktop interfaces with **99.50% accuracy** and **99.65% average confidence**.
 
-## 🚀 Key Features
+## Key Features
 
 - **Two Model Options**: Basic (98.86%) and Improved (99.50%) accuracy
 - **Web Application**: Beautiful HTML5 canvas interface with real-time predictions
@@ -34,7 +34,7 @@ mnist/
     └── test.yml           # Automated testing
 ```
 
-## 🧠 Model Architecture
+## Model Architecture
 
 ### Basic Model (98.86% accuracy)
 - 3 Convolutional layers (32, 64, 64 filters)
@@ -49,7 +49,7 @@ mnist/
 - Dense layers with batch normalization
 - 2.1M parameters
 
-## 🎨 User Interfaces
+## User Interfaces
 
 ### Web Application
 - Interactive HTML5 canvas for drawing
@@ -65,7 +65,7 @@ mnist/
 - Real-time predictions
 - Cross-platform compatibility
 
-## 🔧 Technical Stack
+## Technical Stack
 
 - **Backend**: Python, Flask, TensorFlow/Keras
 - **Frontend**: HTML5, CSS3, JavaScript
@@ -73,7 +73,7 @@ mnist/
 - **ML**: Convolutional Neural Networks
 - **Deployment**: Docker, Heroku, Railway ready
 
-## 📊 Performance Metrics
+## Performance Metrics
 
 ### Basic Model
 - **Accuracy**: 98.86%
@@ -87,7 +87,7 @@ mnist/
 - **High Confidence (>90%)**: 99.05% of predictions
 - **Parameters**: 2.1M
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Clone repository
@@ -102,7 +102,7 @@ python web.py
 # Open http://localhost:5001
 ```
 
-## 📚 Documentation
+## Documentation
 
 - **README.md**: Complete usage guide
 - **DEPLOYMENT.md**: Deployment instructions
@@ -118,7 +118,7 @@ python web.py
 - Model validation tests
 - Application integration tests
 
-## 🌟 Highlights
+## Highlights
 
 1. **Production Ready**: Complete with error handling, logging, and monitoring
 2. **Well Documented**: Every function and class thoroughly documented
@@ -127,7 +127,7 @@ python web.py
 5. **Educational**: Great for learning ML and web development
 6. **Professional**: Clean, maintainable code structure
 
-## 🎯 Use Cases
+## Use Cases
 
 - **Education**: Learn machine learning and web development
 - **Prototyping**: Quick digit recognition demos
@@ -135,7 +135,7 @@ python web.py
 - **Production**: Deploy as a service for digit recognition
 - **Portfolio**: Showcase ML and full-stack development skills
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 - Real-time video recognition
 - Multi-digit recognition
