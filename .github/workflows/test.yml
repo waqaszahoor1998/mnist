@@ -1,0 +1,83 @@
+name: Test MNIST Application
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8, 3.9, 3.10, 3.11]
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Test basic model
+      run: |
+        python -c "
+        from model import MNISTDigitRecognizer
+        recognizer = MNISTDigitRecognizer()
+        recognizer.load_data()
+        recognizer.build_model()
+        print('Basic model test passed')
+        "
+    
+    - name: Test improved model
+      run: |
+        python -c "
+        from improved_model import ImprovedMNISTRecognizer
+        recognizer = ImprovedMNISTRecognizer()
+        recognizer.load_data()
+        recognizer.build_improved_model()
+        print('Improved model test passed')
+        "
+    
+    - name: Test web application
+      run: |
+        python -c "
+        from app import app, load_model
+        load_model()
+        print('Web application test passed')
+        "
+    
+    - name: Test demo script
+      run: |
+        python -c "
+        from demo import quick_demo
+        print('Demo script test passed')
+        "
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+    
+    - name: Install linting tools
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 black isort
+    
+    - name: Run linters
+      run: |
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        black --check .
+        isort --check-only .
