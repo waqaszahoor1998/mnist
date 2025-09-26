@@ -28,9 +28,9 @@ ENV/
 env.bak/
 venv.bak/
 
-# Model files (too large for GitHub)
-*.h5
-*.hdf5
+# Large model files (uncomment if models become too large)
+# *.h5
+# *.hdf5
 *.pkl
 *.pickle
 
